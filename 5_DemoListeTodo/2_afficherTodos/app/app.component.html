@@ -1,0 +1,22 @@
+<div class="container">
+
+<h1>Todo Liste - Mon Gestionnaire de Tâches</h1>
+
+<div class="row">
+
+        <div class="col-md-6">
+        <table  class="table table-bordered table-hover">
+
+            <!--  todos -->
+            <tr *ngFor="let todo of todos">
+                <td width="55%">{{todo.texte}}</td>
+                <td width="25%">{{todo.date}}</td>
+                <td width="25%">{{todo.priority}}</td>     
+                <td width="2%"><span class="label label-danger">X</span></td>
+            </tr>
+        </table>  
+        </div>
+
+</div><!-- row -->
+
+</div><!-- container --> 

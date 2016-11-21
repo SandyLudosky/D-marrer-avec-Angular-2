@@ -1,0 +1,65 @@
+<div class="container">
+
+<h1>Todo Liste - Mon Gestionnaire de Tâches</h1>
+
+<!--  Formulaire - ajouter todo -->
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <div class="row">
+
+            <!--texte -->
+            <div class="col-md-5">
+                <input type="text" placeholder="todo .." class="form-control input-sm" [(ngModel)]="nouveauTodo" name="nouveauTodo"><br>               
+            </div>
+
+             <!--date  -->
+            <div class="col-md-5">
+                 <input type="date" class="form-control input-sm" [(ngModel)]="todoDate" name="todoDate">
+            </div>
+
+             <!-- priority  -->
+            <div class="col-md-12">
+               
+            </div>
+      
+      </div><!-- texte/ date / priority -->
+
+      <div class="row">
+          <div class="col-md-12">
+              <textarea class="form-control input-sm"  rows="3" [(ngModel)]="todoDesc" name="todoDesc"></textarea>
+          </div>
+      </div>
+
+    
+        <br>
+        <!-- ajouter bouton -->
+        <button (click)="ajouterTodo(nouveauTodo, todoDesc, todoDate, 'faible')">Ajouter</button>
+
+    
+    </div>
+
+</div>
+
+<br>
+
+<!--  Liste todos -->
+<div class="row">
+        <div class="col-md-8">
+        <table  class="table table-bordered table-hover">
+
+      
+            <tr *ngFor="let todo of todos">
+                <td width="55%">{{todo.texte | uppercase}}</td>
+                <td width="25%">{{todo.date | date: "dd - MM - y"}}</td>
+                <td width="25%">{{todo.priority}}</td>     
+                <td width="2%"><span class="label label-danger">X</span></td>
+            </tr>
+        </table>  
+        </div>
+
+</div><!-- row -->
+
+</div><!-- container --> 

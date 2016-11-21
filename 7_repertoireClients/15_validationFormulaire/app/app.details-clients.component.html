@@ -1,0 +1,43 @@
+
+
+<div class="row">
+
+
+    <div class="col-md-6">
+        <h4>Détails Clients</h4>
+
+
+        <!--Afficher Détails Clients-->
+        <div *ngIf="!edit">
+
+            <ul>
+                <li>{{client.nom | uppercase}}, {{client.prenom}}</li>
+                <li> {{client.email}}</li>      
+            </ul>
+ 
+        </div> 
+        
+        <hr>
+         <!-- Modifier Détails Clients-->
+         <div *ngIf="edit">
+             <!-- nom -->
+             <input type="text" class="form-control" placeholder="Nom Client" [(ngModel)]="client.nom" name="client.nom"> <br>
+
+             <!-- prénom -->
+             <input type="text" class="form-control" placeholder="Prénom Client" [(ngModel)]="client.prenom" name="client.prenom"> <br>
+              <!-- email -->
+             <input type="text" class="form-control" placeholder="Email Client" [(ngModel)]="client.email" name="client.email">
+         </div>
+
+         <br>
+
+         <div class="pull-right">
+               <a href="#"  class="btn btn-default" (click)="modifierClient()"> <span class="glyphicon glyphicon-pencil"></span> {{texteBouton}}</a> 
+              <a href="#"  class="btn btn-default" (click)="supprimerClient(client.id)"> <span class="glyphicon glyphicon-trash"></span> Supprimer</a>
+         </div>
+  
+
+    </div>
+
+
+</div> <!-- row -->

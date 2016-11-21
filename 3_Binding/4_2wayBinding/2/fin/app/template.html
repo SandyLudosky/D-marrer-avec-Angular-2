@@ -1,0 +1,23 @@
+<h1>Liste Tâches</h1>
+
+<!-- formulaire -->
+<div>
+    <form>
+        <input type="text" placeholder="ajouter à liste" name="texte" [(ngModel)]="texte">
+        <input type="submit" value="ajouter" (click)="ajouterAListe(texte)">
+    </form>
+</div>
+
+<!-- 2-way binding -->
+<div>
+ {{texte}}
+</div><br>
+
+<!-- liste tâches -->
+<div>
+
+    <ul *ngFor="let tache of taches">
+        <li>{{tache}}</li>
+    </ul>   
+</div>
+

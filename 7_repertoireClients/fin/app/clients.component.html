@@ -1,0 +1,42 @@
+
+<br>
+
+	
+
+
+
+	<div class="row">
+		
+		<div class="col-md-6">
+
+		<h4>Liste Clients </h4>
+			
+			<table class="table table-bordered">
+				
+				<thead>
+					<tr>
+						<th class="text-center"><span class="glyphicon glyphicon-pencil"></span> </th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Email</th>	
+					</tr>
+				</thead>
+				<tr *ngFor="let client of clients" [class.inactif]="!client.actif">	
+
+					<td width="5"><button class="btn" (click)="voirDetails(client)" [disabled]="!client.actif">
+         			 <span class="glyphicon glyphicon-pencil"></span>  Edit
+       				 </button></td>
+
+					<td>{{client.nom}}</td>
+					<td>{{client.prenom}}</td>
+					<td>{{client.email}}</td>
+					
+				</tr>
+
+			</table>
+
+		</div>
+	</div>
+	
+
+

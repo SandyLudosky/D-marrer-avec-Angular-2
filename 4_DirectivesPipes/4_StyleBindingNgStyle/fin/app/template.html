@@ -1,0 +1,16 @@
+<h1>Style Binding - NgStyle</h1> 
+
+
+<p>Je veux apprendre : </p>
+  
+<br>
+  
+<table class="table table-bordered" style="width:20%" border=1>
+  <tr *ngFor="let langage of langages let i=index" >
+    <td>{{i + 1}}</td>
+    <td [ngStyle]="setStyles(langage)">{{langage.nom}}</td>
+    <td><span (click)="marquerImportant(i)" style="text-align:center"> ✅</span></td>
+    <td><span (click)="marquerPasImportant(i)" style="text-align:center"> ❌</span></td>
+  <tr>
+</table>
+

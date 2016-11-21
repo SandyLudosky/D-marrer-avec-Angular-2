@@ -1,0 +1,22 @@
+<h1>Acheter :</h1>
+
+<!-- formulaire -->
+<div>
+    <form>
+     <input [(ngModel)]="texte" type="text" placeholder="ajouter à liste" name="texte"> 
+     <input type="submit" value="Ajouter" class="btn" (click)="ajouterTache(texte)">          
+    </form>
+</div>
+
+<!-- 2-way binding -->
+<div>
+    <p>{{texte}}</p>
+</div><br>
+
+<!-- liste tâches -->
+<div>
+    <ul *ngFor="let tache of taches let i=index">
+        <li (click)="barrerListe(i)" [class.fait]="tache.fait == true">{{tache.texte}}</li>
+    </ul>
+</div>
+

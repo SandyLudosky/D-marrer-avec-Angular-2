@@ -1,0 +1,8 @@
+<h1>NgIf</h1>
+
+<div>
+    <p *ngIf="visible">cliquer sur bouton pour afficher ou cacher texte</p>  
+    <p *ngIf="!visible">&nbsp;</p>
+</div>
+
+<button (click)="cacherTexte()">{{texteBouton}}</button>

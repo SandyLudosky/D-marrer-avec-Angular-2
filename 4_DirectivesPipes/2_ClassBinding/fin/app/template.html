@@ -1,0 +1,7 @@
+<h1>ngFor - Class Binding</h1>
+<p>J'apprends: </p>
+
+<ul *ngFor="let langage of langages let i=index" style="width: 35%">
+    <!-- liste langages de programmation -->
+    <li (click)="surligner(i)" [class.surligner]="langage.interested == true">{{langage.nom}}</li>
+</ul>

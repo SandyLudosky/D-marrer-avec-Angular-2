@@ -1,0 +1,37 @@
+h1 {color:blue}
+h2 {color:red}
+p {font-style: italic}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+/*tr:nth-child(even) {
+    background-color: #dddddd;
+}*/
+
+.delete-icon {
+	cursor: cell;
+	/*cursor: url("http://a.deviantart.net/avatars/c/l/clouddustmare.png"), auto;	*/	
+}
+
+.faible {
+	/*background: transparent;*/
+    background: rgba(0, 0, 255, 0.3);
+}
+
+.moyenne {
+	background: rgba(255, 255, 0, 0.2);
+}
+
+.haute {
+	background: rgba(255, 0, 0, 0.2);;
+}

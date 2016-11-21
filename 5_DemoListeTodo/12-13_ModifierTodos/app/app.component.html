@@ -1,0 +1,69 @@
+<div class="container">
+
+<h1>Todo Liste - Mon Gestionnaire de Tâches</h1>
+
+<!--  Formulaire - ajouter todo -->
+<formulaire-todo></formulaire-todo>
+
+<br>
+
+<!--  Liste todos -->
+<div class="row">
+        <div class="col-md-8">
+        <table  class="table table-bordered">
+
+            <tr *ngFor="let todo of todos" [ngClass]="setClasses(todo)" (click)="onSelect(todo)">
+                <td width="55%">{{todo.texte | uppercase}}</td>
+                <td width="25%">{{todo.date | date: "dd - MM - y"}}</td>
+                <td width="25%">{{todo.priority}}</td>     
+                <td width="2%"><span class="label label-danger">X</span></td>
+            </tr>
+
+        </table>  
+        </div>
+
+</div><!-- row -->
+
+<!-- affichage détails Todo-->
+<div class="row" *ngIf="todoSelectionne">
+
+    <div class="col-md-8">
+
+        <div class="well">
+
+            <!--Afficher Todo-->
+            <div *ngIf="!edit">
+              <h2>{{todoSelectionne.texte}}</h2>
+              <p><label>priorité :</label> {{todoSelectionne.priority}}</p>
+              <p>{{todoSelectionne.desc}}</p>
+            </div>
+
+            <!--Modifier Todo-->
+            <div *ngIf="edit">
+
+                <!-- Texte -->
+                <span class="help-block">Modifier Todo</span>
+                <input type="text" class="form-control" [(ngModel)]="todoSelectionne.texte" name="todoSelectionne.texte" >
+
+                <!--Priorité -->
+                <span class="help-block">Modifier Priorité</span>
+                <select class="form-control input-sm" [(ngModel)]="todoSelectionne.priority" required>
+                    <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+                </select>
+    
+
+                <!-- Description -->
+                <span class="help-block">Modifier Description</span>
+                <input type="text" class="form-control" [(ngModel)]="todoSelectionne.desc" name="todoSelectionne.desc" >
+            </div>
+
+
+
+              <p><a href="#" class="btn btn-default btn-sm" (click)="modifierTodo(edit)">Modifier</a></p>
+        </div>
+      
+    </div>
+
+</div> <!-- todo sélectionné -->
+
+</div><!-- container --> 

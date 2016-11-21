@@ -1,0 +1,12 @@
+.ng-valid[required]  {
+  border: 2px solid #16a085; 
+}
+
+.ng-invalid {
+  border: 2px solid #c0392b; 
+}
+
+
+.ng-untouched {
+  border: 1px solid #95a5a6; 
+}

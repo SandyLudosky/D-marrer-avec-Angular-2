@@ -1,0 +1,39 @@
+ <br>
+    <div *ngIf="client">
+        
+      <div class="row">
+          <div class="col-md-6">
+
+          <h4>Editer Détails Client: </h4>
+
+            <div *ngIf="!edit">
+              <h2>details: {{client.nom}} {{client.prenom}}</h2>
+              <p>{{client.email}} </p>
+              <!-- <img [src]="client.avatar" width="76" height="76"> -->          
+            </div>
+         
+      
+           <div *ngIf="edit" >
+              <br>
+
+              <span id="helpBlock" class="help-block">Modifier Nom</span>
+              <input type="text" class="form-control" [(ngModel)]="client.nom">
+               <span id="helpBlock" class="help-block">Modifier Prénom</span>
+              <input type="text"  class="form-control" [(ngModel)]="client.prenom">
+               <span id="helpBlock" class="help-block">Modifier Email</span>
+              <input type="email"  class="form-control" [(ngModel)]="client.email">
+           </div>
+
+            <hr>
+
+          </div><!-- col -->
+
+        </div><!-- row -->
+
+    
+
+    </div>
+
+     <button (click)="goBack()" class="btn btn-info">Back</button>
+    <a (click)="onEdit(edit)" class="btn btn-default"> <span *ngIf="edit" class="glyphicon glyphicon-save"></span> <span *ngIf="!edit" class="glyphicon glyphicon-pencil"></span> {{alternateText}}</a>
+    <a (click)="supprimer(client.id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>supprimer</a>

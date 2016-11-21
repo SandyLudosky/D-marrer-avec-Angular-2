@@ -1,0 +1,25 @@
+body {
+	padding-top: 100px;
+}
+h1 {color:blue}
+h2 {color:red}
+p {font-style: italic}
+ul li {
+	 list-style-type: none;
+	 border-top: 1px solid #ccc;
+	 padding: 10px 0 10px 30px;
+	 }
+
+.selected {
+	color: #ccc; 
+	text-decoration: line-through
+}
+
+.important {
+	background-color : yellow;
+	color: red;
+}
+
+.panel-body, ul {
+	padding: 0;
+}

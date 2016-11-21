@@ -1,0 +1,35 @@
+<h1>CurrencyPipe</h1> 
+<p>Je veux acheter : </p>
+
+<div>
+  <input type="text" placeholder="livre.." [(ngModel)]="nouveau" name="nouveau">
+  <input type="number" placeholder="prix" [(ngModel)]="prix" name="prix">
+  <input type="submit" value="ajouter" (click)="ajouterListe(nouveau, prix)">
+</div>
+
+<br>
+  
+<table class="table table-bordered" style="width:60%" border=1>
+  <tr>
+    <th></th>
+    <th>Titre Livre</th> 
+    <th>Prix</th>
+    <th></th>
+  </tr>
+
+  <tr *ngFor="let livre of livres let i=index" >
+    <td width="20">{{i + 1}}</td>
+    <td >{{livre.nom }}</td>
+    <td  width="30"> {{livre.prix}}</td>
+  
+    <td  width="10"><span (click)="supprimerListe(i)" style="text-align:center"> ❌</span></td>
+
+  </tr>
+  <tr>
+    <td></td>
+    <td style="text-align:right">Total : </td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>

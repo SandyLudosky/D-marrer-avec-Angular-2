@@ -1,0 +1,38 @@
+<div class="row" *ngIf="todoSelectionne">
+
+    <div class="col-md-8">
+
+        <div class="well">
+
+            <!--Afficher Todo-->
+            <div *ngIf="!edit">
+              <h2>{{todoSelectionne.texte}}</h2>
+              <p><label>priorité :</label> {{todoSelectionne.priority}}</p>
+              <p>{{todoSelectionne.desc}}</p>
+            </div>
+
+            <!--Modifier Todo-->
+            <div *ngIf="edit">
+
+                <!-- Texte -->
+                <span class="help-block">Modifier Todo</span>
+                <input type="text" class="form-control" [(ngModel)]="todoSelectionne.texte" name="todoSelectionne.texte" >
+
+                <!--Priorité -->
+                <span class="help-block">Modifier Priorité</span>
+                <select class="form-control input-sm" [(ngModel)]="todoSelectionne.priority" required>
+                    <option *ngFor="let p of priorities" [value]="p">{{p}}</option>
+                </select>
+    
+
+                <!-- Description -->
+                <span class="help-block">Modifier Description</span>
+                <input type="text" class="form-control" [(ngModel)]="todoSelectionne.desc" name="todoSelectionne.desc" >
+            </div>
+
+              <p><a href="#" class="btn btn-default btn-sm" (click)="modifierTodo(edit)">{{texteBouton}}</a></p>
+        </div>
+      
+    </div>
+
+</div> <!-- todo sélectionné -->

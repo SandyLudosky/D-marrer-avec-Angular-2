@@ -1,0 +1,22 @@
+<h1>DatePipe</h1> 
+<h4>Je veux apprendre : </h4>
+
+<br>
+
+<div>
+  <input type="text" placeholder="langage.." [(ngModel)]="nouveau" name="nouveau" class="input-sm">
+  <input type="submit" value="ajouter" class="btn btn-default btn-sm" (click)="ajouterLangage(nouveau)">
+</div>
+
+<br>
+  
+<table class="table table-bordered" style="width:50%" border=1>
+  <tr *ngFor="let langage of langages let i=index" >
+    <td>{{i + 1}}</td>
+    <td (click)="archiver(i)" [ngStyle]="setStyles(langage)">{{langage.nom | uppercase}}</td>
+    <td><span (click)="marquerImportant(i)" style="text-align:center"> ✅</span></td>
+    <td><span (click)="marquerPasImportant(i)" style="text-align:center"> ❌</span></td>
+   <!-- date -->
+
+  <tr>
+</table>
